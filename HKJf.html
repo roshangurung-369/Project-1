@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Week | Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0a0a0f; --surface: #13131c; --border: #1e1e30;
+      --accent: #e8ff47; --accent2: #ff5c38; --text: #f0f0f0; --muted: #7070a0; --card: #16162a;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+
+    nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:200; }
+    .nav-logo { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--accent); letter-spacing:2px; }
+    .nav-links { display:flex; gap:1.5rem; list-style:none; }
+    .nav-links a { color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:500; transition:color .2s; }
+    .nav-links a:hover, .nav-links a.active { color:var(--accent); }
+
+    .page-hero { padding:3rem 2rem 2rem; text-align:center; }
+    .page-hero h1 { font-family:'Bebas Neue',sans-serif; font-size:3.5rem; letter-spacing:4px; }
+    .page-hero h1 span { color:var(--accent); }
+    .page-hero p { color:var(--muted); margin-top:.5rem; }
+
+    /* FILTER TABS */
+    .filter-bar { display:flex; gap:.7rem; flex-wrap:wrap; justify-content:center; padding:1rem 2rem 2rem; }
+    .filter-btn { padding:.5rem 1.2rem; background:var(--surface); border:1px solid var(--border); border-radius:20px; color:var(--muted); font-family:inherit; font-size:.85rem; cursor:pointer; transition:all .2s; }
+    .filter-btn.active, .filter-btn:hover { background:var(--accent); color:#000; border-color:var(--accent); font-weight:700; }
+
+    /* CSS GALLERY GRID */
+    .gallery { display:grid; grid-template-columns:repeat(auto-fill, minmax(250px, 1fr)); gap:1rem; max-width:1100px; margin:0 auto; padding:0 1.5rem 4rem; }
+
+    /* CSS-only hover card with overlay */
+    .gallery-item {
+      position:relative; border-radius:14px; overflow:hidden; cursor:pointer;
+      border:1px solid var(--border); aspect-ratio:4/3;
+      transition:transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .35s;
+    }
+    .gallery-item:hover { transform:scale(1.04) translateY(-4px); box-shadow:0 20px 60px rgba(0,0,0,.6), 0 0 0 2px var(--accent); z-index:10; }
+
+    .gallery-item img {
+      width:100%; height:100%; object-fit:cover; display:block;
+      transition:filter .4s, transform .4s;
+      filter:saturate(.8) brightness(.85);
+    }
+    .gallery-item:hover img { filter:saturate(1.1) brightness(1); transform:scale(1.06); }
+
+    /* CSS overlay — no JS needed */
+    .gallery-overlay {
+      position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.85) 0%, transparent 55%);
+      opacity:0; transition:opacity .3s;
+      display:flex; flex-direction:column; justify-content:flex-end; padding:1rem;
+    }
+    .gallery-item:hover .gallery-overlay { opacity:1; }
+    .gallery-overlay h3 { font-family:'Bebas Neue',sans-serif; font-size:1.3rem; letter-spacing:1px; color:#fff; }
+    .gallery-overlay p { font-size:.8rem; color:var(--muted); margin-top:.2rem; }
+    .gallery-overlay .tag { display:inline-block; background:var(--accent); color:#000; font-size:.7rem; font-weight:700; padding:2px 8px; border-radius:10px; margin-bottom:.5rem; }
+
+    /* CSS-only lightbox using :target */
+    .lightbox {
+      position:fixed; inset:0; background:rgba(0,0,0,.92); z-index:1000;
+      display:none; align-items:center; justify-content:center;
+      padding:2rem;
+    }
+    .lightbox:target { display:flex; }
+    .lightbox img { max-width:90vw; max-height:80vh; object-fit:contain; border-radius:10px; box-shadow:0 0 80px rgba(232,255,71,.15); }
+    .lightbox-close { position:absolute; top:1.2rem; right:1.5rem; color:#fff; font-size:2rem; text-decoration:none; line-height:1; }
+    .lightbox-close:hover { color:var(--accent); }
+    .lightbox-caption { position:absolute; bottom:2rem; left:50%; transform:translateX(-50%); color:#fff; font-family:'Bebas Neue',sans-serif; letter-spacing:2px; font-size:1.2rem; }
+
+    /* FEATURED (span 2 cols) */
+    .gallery-item.featured { grid-column:span 2; aspect-ratio:16/7; }
+    @media(max-width:600px) { .gallery-item.featured { grid-column:span 1; aspect-ratio:4/3; } }
+
+    footer { text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">⚡ SportWeek</span>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="gallery.html" class="active">Gallery</a></li>
+    <li><a href="responsive.html">Schedule</a></li>
+    <li><a href="form.html">Contact</a></li>
+    <li><a href="register.html">Register</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <h1>SPORT <span>GALLERY</span></h1>
+  <p>Highlights from Sport Week events — hover to reveal details</p>
+</div>
+
+<div class="filter-bar">
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">Football</button>
+  <button class="filter-btn">Basketball</button>
+  <button class="filter-btn">Swimming</button>
+  <button class="filter-btn">Athletics</button>
+</div>
+
+<!-- CSS GRID GALLERY -->
+<div class="gallery">
+
+  <!-- Featured wide card -->
+  <div class="gallery-item featured">
+    <a href="#lb1"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=900&q=70" alt="Football match" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Featured</span>
+      <h3>Championship Final — Football</h3>
+      <p>Semi-final clash between Team Alpha & Team Beta · June 3</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="#lb2"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=70" alt="Basketball" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Basketball</span>
+      <h3>Slam Dunk Contest</h3>
+      <p>Indoor court · May 31</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="#lb3"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&q=70" alt="Swimming" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Swimming</span>
+      <h3>100m Freestyle Heat</h3>
+      <p>Olympic pool · June 1</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="#lb4"><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=70" alt="Athletics" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Athletics</span>
+      <h3>Sprint Finals</h3>
+      <p>Main track · June 2</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="#lb5"><img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&q=70" alt="Training" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Training</span>
+      <h3>Morning Warm-Up</h3>
+      <p>Outdoor field · Daily 6 AM</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="#lb6"><img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=600&q=70" alt="Volleyball" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Volleyball</span>
+      <h3>Beach Volleyball</h3>
+      <p>Court B · June 1</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="#lb7"><img src="https://images.unsplash.com/photo-1596200695538-b7b94e12073e?w=600&q=70" alt="Cricket" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Cricket</span>
+      <h3>T20 Match Day</h3>
+      <p>Cricket ground · May 30</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="#lb8"><img src="https://images.unsplash.com/photo-1622279457486-62dbd5e57987?w=600&q=70" alt="Tennis" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Tennis</span>
+      <h3>Singles Quarter Final</h3>
+      <p>Centre court · June 2</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- CSS-only Lightboxes -->
+<div class="lightbox" id="lb1">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80" alt="Football" />
+  <span class="lightbox-caption">Championship Final — Football</span>
+</div>
+<div class="lightbox" id="lb2">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200&q=80" alt="Basketball" />
+  <span class="lightbox-caption">Slam Dunk Contest</span>
+</div>
+<div class="lightbox" id="lb3">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=1200&q=80" alt="Swimming" />
+  <span class="lightbox-caption">100m Freestyle Heat</span>
+</div>
+<div class="lightbox" id="lb4">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&q=80" alt="Athletics" />
+  <span class="lightbox-caption">Sprint Finals</span>
+</div>
+<div class="lightbox" id="lb5">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=1200&q=80" alt="Training" />
+  <span class="lightbox-caption">Morning Warm-Up</span>
+</div>
+<div class="lightbox" id="lb6">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&q=80" alt="Volleyball" />
+  <span class="lightbox-caption">Beach Volleyball</span>
+</div>
+<div class="lightbox" id="lb7">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1596200695538-b7b94e12073e?w=1200&q=80" alt="Cricket" />
+  <span class="lightbox-caption">T20 Match Day</span>
+</div>
+<div class="lightbox" id="lb8">
+  <a href="#" class="lightbox-close">&times;</a>
+  <img src="https://images.unsplash.com/photo-1622279457486-62dbd5e57987?w=1200&q=80" alt="Tennis" />
+  <span class="lightbox-caption">Singles Quarter Final</span>
+</div>
+
+<footer>&copy; 2025 SportWeek &bull; Image Gallery</footer>
+
+</body>
+</html>
