@@ -1,21 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sport Week | Gallery</title>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #0a0a0f; --surface: #13131c; --border: #1e1e30;
-      --accent: #e8ff47; --accent2: #ff5c38; --text: #f0f0f0; --muted: #7070a0; --card: #16162a;
+:root {
+  --bg: #0a0a0f;
+  --surface: #13131c;
+  --border: #1e1e30;
+  --accent: #e8ff47;
+  --accent2: #ff5c38;
+  --text: #f0f0f0;
+  --muted: #7070a0;
+  --card: #16162a;
+}
+    *, *::before, *::after { 
+        box-sizing: border-box; 
+        margin: 0; 
+        padding: 0; 
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; min-height: 100vh; }
+    body { 
+        background: var(--bg); 
+        color: var(--text); 
+        font-family: 'DM Sans', sans-serif; 
+        min-height: 100vh; 
+    }
 
-    nav { display:flex; align-items:center; justify-content:space-between; padding:1rem 2rem; background:var(--surface); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:200; }
-    .nav-logo { font-family:'Bebas Neue',sans-serif; font-size:1.8rem; color:var(--accent); letter-spacing:2px; }
-    .nav-links { display:flex; gap:1.5rem; list-style:none; }
+    nav { 
+        display:flex; 
+        align-items:center; 
+        justify-content:space-between; 
+        padding:1rem 2rem; 
+        background:var(--surface); 
+        border-bottom:1px solid var(--border); 
+        position:sticky; 
+        top:0; 
+        z-index:200; 
+    }
+
+    .nav-logo { 
+        font-family:'Bebas Neue',sans-serif; 
+        font-size:1.8rem; 
+        color:var(--accent); 
+        letter-spacing:2px; 
+    }
+
+    .nav-links { 
+        display:flex; 
+        gap:1.5rem; 
+        list-style:none; 
+    }
     .nav-links a { color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:500; transition:color .2s; }
     .nav-links a:hover, .nav-links a.active { color:var(--accent); }
 
@@ -75,73 +103,3 @@
     @media(max-width:600px) { .gallery-item.featured { grid-column:span 1; aspect-ratio:4/3; } }
 
     footer { text-align:center; padding:2rem; border-top:1px solid var(--border); color:var(--muted); font-size:.85rem; }
-  </style>
-</head>
-<body>
-
-<nav>
-  <span class="nav-logo">⚡ SportWeek</span>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="gallery.html" class="active">Gallery</a></li>
-    <li><a href="responsive.html">Schedule</a></li>
-    <li><a href="form.html">Contact</a></li>
-    <li><a href="register.html">Register</a></li>
-  </ul>
-</nav>
-
-<div class="page-hero">
-  <h1>SPORT <span>GALLERY</span></h1>
-  <p>Highlights from Sport Week events — hover to reveal details</p>
-</div>
-
-<div class="filter-bar">
-  <button class="filter-btn active">All</button>
-  <button class="filter-btn">Football</button>
-  <button class="filter-btn">Basketball</button>
-  <button class="filter-btn">Swimming</button>
-  <button class="filter-btn">Athletics</button>
-</div>
-
-<!-- CSS GRID GALLERY -->
-<div class="gallery">
-
-  <!-- Featured wide card -->
-  <div class="gallery-item featured">
-    <a href="#lb1"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=900&q=70" alt="Football match" loading="lazy" /></a>
-    <div class="gallery-overlay">
-      <span class="tag">Featured</span>
-      <h3>Championship Final — Football</h3>
-      <p>Semi-final clash between Team Alpha & Team Beta · June 3</p>
-    </div>
-  </div>
-
-  <div class="gallery-item">
-    <a href="#lb2"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=70" alt="Basketball" loading="lazy" /></a>
-    <div class="gallery-overlay">
-      <span class="tag">Basketball</span>
-      <h3>Slam Dunk Contest</h3>
-      <p>Indoor court · May 31</p>
-    </div>
-  </div>
-
-  <div class="gallery-item">
-    <a href="#lb3"><img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&q=70" alt="Swimming" loading="lazy" /></a>
-    <div class="gallery-overlay">
-      <span class="tag">Swimming</span>
-      <h3>100m Freestyle Heat</h3>
-      <p>Olympic pool · June 1</p>
-    </div>
-  </div>
-
-  <div class="gallery-item">
-    <a href="#lb4"><img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=600&q=70" alt="Athletics" loading="lazy" /></a>
-    <div class="gallery-overlay">
-      <span class="tag">Athletics</span>
-      <h3>Sprint Finals</h3>
-      <p>Main track · June 2</p>
-    </div>
-  </div>
-
-  <div class="gallery-item">
-    <a href="#lb5"><i
