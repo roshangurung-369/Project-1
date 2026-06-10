@@ -4,7 +4,6 @@ The name of the group member are:<br>
                     1.Suman Yadav Kumar<br>
                     2.Normbu Thersing Sherpa<br>
                     3.Roshan Gurung<br>
-ABOUT THIS PROJECT
 
 # Player Management System
 
