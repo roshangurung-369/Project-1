@@ -1,8 +1,9 @@
 This is a group project.
-The name of the group member are:
-                    1.Suman Yadav Kumar
-                    2.Normbu Thersing Sherpa
-                    3.Roshan Gurung
+<br>
+The name of the group member are:<br>
+                    1.Suman Yadav Kumar<br>
+                    2.Normbu Thersing Sherpa<br>
+                    3.Roshan Gurung<br>
 ABOUT THIS PROJECT
 
 # Player Management System
