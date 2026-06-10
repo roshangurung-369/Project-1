@@ -25,7 +25,6 @@
       min-height: 100vh;
     }
 
-    /* Reuse your Hero styling */
     .page-hero { 
       padding: 4rem 2rem 1rem;
       text-align: center;
@@ -40,7 +39,6 @@
 
     .page-hero h1 span { color: var(--primary); }
 
-    /* Form Specific Styling */
     .form-container {
       max-width: 450px;
       margin: 2rem auto 4rem;
