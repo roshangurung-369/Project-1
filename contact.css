@@ -1,0 +1,104 @@
+:root {
+  --bg: #0a0a0f;
+  --surface: #141420;
+  --border: #1e1e30;
+  --text: #f0f0f0;
+  --text-muted: #7070a0;
+  --primary: #e8ff47;
+  --secondary: #ff5c38;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
+  line-height: 1.5;
+  padding: 2rem 1rem;
+}
+
+.contact-form {
+  max-width: 700px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 0.6rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(112, 112, 160, 0.9);
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(232, 255, 71, 0.15);
+}
+
+.contact-form button[type="submit"] {
+  margin-top: 1rem;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+  border: 1px solid var(--primary);
+  background: var(--primary);
+  color: #000;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: 0 10px 30px rgba(232, 255, 71, 0.18);
+}
+
+.contact-form button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+.contact-form > div {
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .contact-form {
+    padding: 1.4rem;
+    border-radius: 10px;
+  }
+}
