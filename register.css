@@ -1,0 +1,122 @@
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #141420;
+      --border: #1e1e30;
+      --text: #f0f0f0;
+      --text-muted: #7070a0;
+      --primary: #e8ff47;  
+      --secondary: #ff5c38;
+    }
+
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
+
+    body { 
+      background: var(--bg); 
+      color: var(--text); 
+      font-family: 'DM Sans', sans-serif; 
+      line-height: 1.5;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Reuse your Hero styling */
+    .page-hero { 
+      padding: 4rem 2rem 1rem;
+      text-align: center;
+    }
+
+    .page-hero h1 { 
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 3.5rem;
+      letter-spacing: 2px; 
+      text-transform: uppercase;
+    }
+
+    .page-hero h1 span { color: var(--primary); }
+
+    /* Form Specific Styling */
+    .form-container {
+      max-width: 450px;
+      margin: 2rem auto 4rem;
+      background: var(--surface);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      width: 90%;
+    }
+
+    .form-group { margin-bottom: 1.5rem; }
+
+    label {
+      display: block;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-family: inherit;
+      transition: all 0.2s ease;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(232, 255, 71, 0.1);
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 1rem;
+      background: var(--primary);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      cursor: pointer;
+      transition: transform 0.2s ease, opacity 0.2s ease;
+      margin-top: 1rem;
+    }
+
+    button[type="submit"]:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    footer { 
+      margin-top: auto;
+      text-align: center; 
+      padding: 3rem 2rem; 
+      border-top: 1px solid var(--border); 
+      color: var(--text-muted); 
+      font-size: 0.85rem; 
+    }
