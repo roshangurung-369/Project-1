@@ -1,11 +1,14 @@
+/* ==========================================
+   1. CORE STYLES & VARIABLES
+   ========================================== */
 :root {
   --bg: #0a0a0f;
   --surface: #141420;
   --border: #1e1e30;
   --text: #f0f0f0;
   --text-muted: #7070a0;
-  --primary: #e8ff47;
-  --secondary: #ff5c38;
+  --primary: #e8ff47;     /* Neon Yellow */
+  --secondary: #ff5c38;   /* Neon Orange */
 }
 
 *,
@@ -21,9 +24,66 @@ body {
   color: var(--text);
   font-family: "DM Sans", sans-serif;
   line-height: 1.5;
-  padding: 2rem 1rem;
 }
 
+/* ==========================================
+   2. NAVIGATION BAR (NEW)
+   ========================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Keeps navbar on top of everything else when scrolling */
+}
+
+.nav-logo {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--text);
+  letter-spacing: -0.5px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Hover state: turns bright white when hovered */
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* Active state: highlights the current page in neon yellow */
+.nav-links a.active {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ==========================================
+   3. LAYOUT CONTAINER (NEW)
+   ========================================== */
+.form-container {
+  padding: 4rem 1rem; /* Gives breathing room between navbar and form */
+}
+
+/* ==========================================
+   4. CONTACT FORM (PREVIOUS)
+   ========================================== */
 .contact-form {
   max-width: 700px;
   margin: 0 auto;
@@ -96,7 +156,27 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/* ==========================================
+   5. RESPONSIVE DESIGN (UPDATED)
+   ========================================== */
 @media (max-width: 640px) {
+  /* Navbar changes to a centered stacked layout on mobile screens */
+  nav {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .form-container {
+    padding: 2rem 1rem;
+  }
+
   .contact-form {
     padding: 1.4rem;
     border-radius: 10px;
