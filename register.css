@@ -14,7 +14,10 @@
       margin: 0; 
       padding: 0; 
     }
-
+    
+    #inputs {
+      
+    }
     body { 
       background: var(--bg); 
       color: var(--text); 
@@ -25,13 +28,38 @@
       min-height: 100vh;
     }
 
-    .nav-logo { 
+        nav { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 1.2rem 2rem; 
+      background: var(--surface); 
+      border-bottom: 1px solid var(--border); 
+    }
+
+        .nav-logo { 
       font-family: 'Bebas Neue', sans-serif; 
       font-size: 1.8rem; 
       color: var(--primary); 
       letter-spacing: 1px; 
     }
-
+    
+       .nav-links { 
+      display: flex; 
+      gap: 1.5rem; 
+      list-style: none; 
+    }
+    
+    .nav-links a { 
+      color: var(--text-muted); 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      transition: color 0.2s ease; 
+    }
+    
+    .nav-links a:hover, .nav-links a.active { 
+      color: var(--primary); 
+    }
     .page-hero { 
       padding: 4rem 2rem 1rem;
       text-align: center;
