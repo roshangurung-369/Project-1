@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sport Week Management System - Home" />
+  <meta name="keywords" content="sport, week, management, schedule" />
+  <meta name="author" content="Sport Week" />
+  <title>Sport Week | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">⚡ SportWeek</span>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="responsive.html">Schedule</a></li>
+    <li><a href="form.html">Contact</a></li>
+    <li><a href="register.html">Register</a></li>
+  </ul>
+</nav>
+
+<header>
+  <div class="hero-tag">🏆 Sport Week 2025</div>
+  <h1>SPORT<br/><span>WEEK</span></h1>
+  <p class="hero-sub">Manage participants across all sports events in one place. Select a sport, add a name, done.</p>
+</header>
+
+<!-- ── SPORT MANAGER ── -->
+<section class="sport-manager" aria-label="Sport Participant Manager">
+  <h2 class="sm-title">Add Participants</h2>
+  <div class="sm-controls">
+    <select id="sportSelect" aria-label="Choose sport">
+      <option value="">— Select Sport —</option>
+      <option value="football">⚽ Football</option>
+      <option value="basketball">🏀 Basketball</option>
+      <option value="cricket">🏏 Cricket</option>
+      <option value="tennis">🎾 Tennis</option>
+      <option value="volleyball">🏐 Volleyball</option>
+      <option value="swimming">🏊 Swimming</option>
+    </select>
+    <input type="text" id="playerName" placeholder="Enter participant name…" aria-label="Participant name" maxlength="40" />
+    <button onclick="addPlayer()">Add ➜</button>
+  </div>
+
+  <div class="sport-sections" id="sportSections">
+    <!-- cards injected by JS -->
+  </div>
+</section>
+
+<!-- ── NAVIGATE TO OTHER PAGES ── -->
+<div class="nav-pages">
+  <a href="gallery.html">🖼 Image Gallery</a>
+  <a href="responsive.html">📅 Schedule (Responsive)</a>
+  <a href="form.html">📋 Contact Form</a>
+  <a href="register.html">📝 Registration Form</a>
+</div>
+
+
+
+
+<footer>
+  <address>
+    SportWeek HQ &bull; Kathmandu, Nepal &bull;
+    <a href="mailto:info@sportweek.np" style="color:var(--accent)">info@sportweek.np</a>
+  </address>
+  <p style="margin-top:.5rem;">&copy; 2025 SportWeek. All rights reserved.</p>
+</footer>
+
+<script>
+  const SPORTS = {
+    football:   { label: '⚽ Football',   icon: '⚽' },
+    basketball: { label: '🏀 Basketball', icon: '🏀' },
+    cricket:    { label: '🏏 Cricket',    icon: '🏏' },
+    tennis:     { label: '🎾 Tennis',     icon: '🎾' },
+    volleyball: { label: '🏐 Volleyball', icon: '🏐' },
+    swimming:   { label: '🏊 Swimming',   icon: '🏊' },
+  };
+
+  const data = JSON.parse(localStorage.getItem('sportWeekData') || '{}');
+  Object.keys(SPORTS).forEach(s => { if (!data[s]) data[s] = []; });
+
+  function save() { localStorage.setItem('sportWeekData', JSON.stringify(data)); }
+
+  function render() {
+    const container = document.getElementById('sportSections');
+    container.innerHTML = '';
+    Object.entries(SPORTS).forEach(([key, meta]) => {
+      const players = data[key] || [];
+      const card = document.createElement('div');
+      card.className = 'sport-card';
+      card.innerHTML = `
+        <div class="sport-card-header">
+          <span class="sport-icon">${meta.icon}</span>
+          <span class="sport-name">${meta.label.split(' ').slice(1).join(' ')}</span>
+          <small style="margin-left:auto;color:var(--muted)">${players.length}</small>
+        </div>
+        <ul class="player-list" id="list-${key}">
+          ${players.length === 0
+            ? '<li class="empty-msg" style="background:none;padding-left:.2rem">No participants yet</li>'
+            : players.map((n, i) => `<li>${n}<button class="remove-btn" onclick="removePlayer('${key}', ${i})">✕</button></li>`).join('')}
+        </ul>`;
+      container.appendChild(card);
+    });
+  }
+
+  function addPlayer() {
+    const sport = document.getElementById('sportSelect').value;
+    const name  = document.getElementById('playerName').value.trim();
+    if (!sport) { alert('Please select a sport first.'); return; }
+    if (!name)  { alert('Please enter a participant name.'); return; }
+    data[sport].push(name);
+    save(); render();
+    document.getElementById('playerName').value = '';
+    document.getElementById('sportSelect').value = '';
+  }
+
+  function removePlayer(sport, idx) {
+    data[sport].splice(idx, 1);
+    save(); render();
+  }
+
+  document.getElementById('playerName').addEventListener('keydown', e => {
+    if (e.key === 'Enter') addPlayer();
+  });
+
+  render();
+</script>
+</body>
+</html>
