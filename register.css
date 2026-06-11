@@ -28,7 +28,7 @@
       min-height: 100vh;
     }
 
-        nav { 
+    nav { 
       display: flex; 
       align-items: center; 
       justify-content: space-between; 
@@ -37,14 +37,14 @@
       border-bottom: 1px solid var(--border); 
     }
 
-        .nav-logo { 
+    .nav-logo { 
       font-family: 'Bebas Neue', sans-serif; 
       font-size: 1.8rem; 
       color: var(--primary); 
       letter-spacing: 1px; 
     }
     
-       .nav-links { 
+    .nav-links { 
       display: flex; 
       gap: 1.5rem; 
       list-style: none; 
@@ -72,7 +72,9 @@
       text-transform: uppercase;
     }
 
-    .page-hero h1 span { color: var(--primary); }
+    .page-hero h1 span { 
+      color: var(--primary); 
+    }
 
     .form-container {
       max-width: 450px;
@@ -84,7 +86,9 @@
       width: 90%;
     }
 
-    .form-group { margin-bottom: 1.5rem; }
+    .form-group { 
+      margin-bottom: 1.5rem; 
+    }
 
     label {
       display: block;
