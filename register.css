@@ -25,6 +25,13 @@
       min-height: 100vh;
     }
 
+    .nav-logo { 
+      font-family: 'Bebas Neue', sans-serif; 
+      font-size: 1.8rem; 
+      color: var(--primary); 
+      letter-spacing: 1px; 
+    }
+
     .page-hero { 
       padding: 4rem 2rem 1rem;
       text-align: center;
