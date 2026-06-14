@@ -1,58 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register Page</title>
-  <link rel="stylesheet" href="register.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register Page</title>
+<link rel="stylesheet" href="register.css">
 </head>
 <body>
 
-  <nav>
-   <span class="nav-logo">⚡ SportWeek</span>
-   <ul class="nav-links">
-     <li><a href="home.html">Home</a></li>
-     <li><a href="HKJf.html">Gallery</a></li>
-     <li><a href="schedule.html">Schedule</a></li>
-     <li><a href="contact.html">Contact</a></li>
-     <li><a href="register.html">Register</a></li>
-   </ul>
-  </nav>
+<nav>
+<span class="nav-logo">⚡ SportWeek</span>
+<ul class="nav-links">
+<li><a href="home.html">Home</a></li>
+<li><a href="HKJf.html">Gallery</a></li>
+<li><a href="schedule.html">Schedule</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="register.html">Register</a></li>
+</ul>
+</nav>
 
-  <h2>Create an Account</h2>
- <div id="inputs">
-  <form action="#" method="post">
+<h2 class="CAN">Create an Account</h2>
 
-    <label for="name">Full Name:</label><br>
-    <input type="text" id="name" name="name" required><br><br>
+<div id="inputs">
+<form action="#" method="post">
 
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" name="email" required><br><br>
+<label for="name">Full Name:</label><br>
+<input type="text" id="name" name="name" placeholder="e.g. Spongebob Squarepants" required ><br><br>
 
-    <label for="username">Username:</label><br>
-    <input type="text" id="username" name="username" required><br><br>
+<label for="email">Email:</label><br>
+<input type="email" id="email" name="email" placeholder="e.g. bikinibottom@example.com" required><br><br>
 
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" name="password" required><br><br>
+<label for="username">Username:</label><br>
+<input type="text" id="username" name="username" placeholder="e.g. spongebob" required><br><br>
 
-    <label for="confirm">Confirm Password:</label><br>
-    <input type="password" id="confirm" name="confirm" required><br><br>
+<label for="password">Password:</label><br>
+<input type="password" id="password" name="password" placeholder="********" required><br><br>
 
-    <label for="gender">Gender:</label><br>
-    <select id="gender" name="gender">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
-    </select><br><br>
+<label for="confirm">Confirm Password:</label><br>
+<input type="password" id="confirm" name="confirm" placeholder="********" required><br><br>
 
-    <label>
-      <input type="checkbox" required>
-      I agree to the terms and conditions
-    </label><br><br>
+<label for="gender">Gender:</label><br>
+<select id="gender" name="gender">
+<option value="male">Male</option>
+<option value="female">Female</option>
+<option value="other">Other</option>
+</select><br><br>
 
-    <button type="submit">Register</button>
+<label>
+<input type="checkbox" required>
+I agree to the terms and conditions
+</label><br><br>
 
-  </form>
+<button type="submit">Register</button>
+
+</form>
 </div>
 </body>
 </html>

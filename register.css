@@ -15,9 +15,7 @@
       padding: 0; 
     }
     
-    #inputs {
-      
-    }
+    
     body { 
       background: var(--bg); 
       color: var(--text); 
@@ -76,19 +74,18 @@
       color: var(--primary); 
     }
 
-    .form-container {
-      max-width: 450px;
-      margin: 2rem auto 4rem;
-      background: var(--surface);
-      padding: 2.5rem;
-      border-radius: 12px;
-      border: 1px solid var(--border);
-      width: 90%;
+    .CAN{
+      Text-align: center;
     }
 
-    .form-group { 
-      margin-bottom: 1.5rem; 
+    #inputs {
+      border: 1px solid var(--border);
+      padding: 2rem 1rem;
+      background: var(--surface);
+      margin: auto auto auto;
+      border-radius: 1rem;
     }
+
 
     label {
       display: block;
