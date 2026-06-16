@@ -18,7 +18,7 @@
     
     body { 
       background: var(--bg); 
-      color: var(--text-); 
+      color: var(--text); 
       font-family: 'DM Sans', sans-serif; 
       line-height: 1.5;
       display: flex;
@@ -78,14 +78,6 @@
       Text-align: center;
     }
 
-    .DHAA {
-      text-align: center;
-      margin-top: 1rem;
-      font-size: 0.9rem;
-      color: var(--text-);
-      padding: 0.5rem;
-    }
-
     #inputs {
       border: 1px solid var(--border);
       padding: 2rem 1rem;
@@ -134,6 +126,14 @@
       cursor: pointer;
     }
 
+    .DHAA {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-);
+      padding: 0.5rem;
+    }
+
     button[type="submit"] {
       width: 100%;
       padding: 1rem;
@@ -162,3 +162,5 @@
       color: var(--text-); 
       font-size: 0.85rem; 
     }
+
+    
