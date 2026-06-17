@@ -58,21 +58,6 @@
     .nav-links a:hover, .nav-links a.active { 
       color: var(--primary); 
     }
-    .page-hero { 
-      padding: 4rem 2rem 1rem;
-      text-align: center;
-    }
-
-    .page-hero h1 { 
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.5rem;
-      letter-spacing: 2px; 
-      text-transform: uppercase;
-    }
-
-    .page-hero h1 span { 
-      color: var(--primary); 
-    }
 
     .CAN{
       Text-align: center;
@@ -97,7 +82,6 @@
       letter-spacing: 1px;
     }
 
-    input[type="text"],
     input[type="email"],
     input[type="password"],
     select {
