@@ -9,7 +9,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     const confirmPassword = document.getElementById('confirm').value;
     const gender = document.getElementById('gender').value;
 
-    if (password !== confirmPassword) {
+    if (password !=  confirmPassword) {
         alert("Passwords doesnt match, Please recheck the passwords.");
         return; 
     }
@@ -22,10 +22,17 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         gender: gender
     };
 
-    localStorage.setItem('registeredUser', JSON.stringify(userData));
+    // Get existing users or create empty array
+    let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+    // Add new user
+    users.push(userData);
+
+    // Save updated array
+    localStorage.setItem('registeredUsers', JSON.stringify(users));
 
     alert("Registration successful! THANK YOU!! :)");
 
-    window.location.href = "login.html"; 
+    window.location.href = "login.html";
 });
 

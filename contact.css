@@ -38,7 +38,7 @@ nav {
 .nav-logo {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--text);
+  color: var(--primarys);
   letter-spacing: -0.5px;
 }
 
