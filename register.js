@@ -24,7 +24,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     localStorage.setItem('registeredUser', JSON.stringify(userData));
 
-    alert("Registration successful! THANK YOU!!");
+    alert("Registration successful! THANK YOU!! :)");
 
     window.location.href = "login.html"; 
 });
