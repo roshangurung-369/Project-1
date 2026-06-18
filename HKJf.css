@@ -54,22 +54,19 @@ nav {
   color: var(--primary); 
 }
 
-.page-hero { 
+.Heading { 
   padding: 4rem 2rem 2rem;
   text-align: center;
 }
 
-.page-hero h1 { 
+.Heading h1 { 
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.5rem;
   letter-spacing: 2px; 
 }
 
-.page-hero h1 span { 
-  color: var(--primary);
-}
 
-.page-hero p {   
+.Heading p {   
   color: var(--text-muted);
   margin-top: 0.5rem; 
 }
