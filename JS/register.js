@@ -22,13 +22,10 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         gender: gender
     };
 
-    // Get existing users or create empty array
     let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
 
-    // Add new user
     users.push(userData);
 
-    // Save updated array
     localStorage.setItem('registeredUsers', JSON.stringify(users));
 
     alert("Registration successful! THANK YOU!! :)");
