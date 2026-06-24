@@ -1,12 +1,12 @@
 
     :root {
-      --bg: #0a0a0f;
-      --surface: #141420;
-      --border: #1e1e30;
-      --text: #f0f0f0;
-      --text-: #7070a0;
-      --primary: #e8ff47;  
-      --secondary: #fb5631;
+      --bg: #09090e;         
+      --surface: #12121c;    
+      --border: #222233;     
+      --text: #ffffff;       
+      --text-muted: #8888aa; 
+      --primary: #d4ff00;    
+      --secondary: #ff4500;  
     }
 
     *, *::before, *::after { 
@@ -18,7 +18,7 @@
     
     body { 
       background: var(--bg); 
-      color: var(--text-); 
+      color: var(--text-muted); 
       font-family: 'DM Sans', sans-serif; 
       line-height: 1.5;
       display: flex;
@@ -49,7 +49,7 @@
     }
     
     .nav-links a { 
-      color: var(--text-); 
+      color: var(--text-muted); 
       text-decoration: none; 
       font-size: 0.9rem; 
       transition: color 0.2s ease; 
@@ -84,7 +84,7 @@
     label {
       display: block;
       font-size: 0.85rem;
-      color: var(--text-);
+      color: var(--text-muted);
       margin-bottom: 0.5rem;
       font-weight: 700;
       text-transform: uppercase;
@@ -116,7 +116,7 @@
       align-items: center;
       gap: 0.5rem;
       font-size: 0.9rem;
-      color: var(--text-);
+      color: var(--text-muted);
       cursor: pointer;
     }
 
@@ -145,6 +145,6 @@
       text-align: center; 
       padding: 3rem 2rem; 
       border-top: 1px solid var(--border); 
-      color: var(--text-); 
+      color: var(--text-muted); 
       font-size: 0.85rem; 
     }

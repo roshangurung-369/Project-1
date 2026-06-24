@@ -137,9 +137,6 @@ nav {
   padding: 2rem;
 }
 
-.lightbox:target {
-  display: flex; 
-}
 
 .lightbox img { 
   max-width: 90vw; 

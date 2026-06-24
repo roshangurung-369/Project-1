@@ -1,11 +1,11 @@
 :root {
-  --bg: #0a0a0f;
-  --surface: #141420;
-  --border: #1e1e30;
-  --text: #f0f0f0;
-  --text-muted: #7070a0;
-  --primary: #e8ff47;
-  --secondary: #ff5c38;
+  --bg: #09090e;         
+  --surface: #12121c;    
+  --border: #222233;     
+  --text: #ffffff;       
+  --text-muted: #8888aa; 
+  --primary: #d4ff00;    
+  --secondary: #ff4500;  
 }
 
 *,
@@ -38,7 +38,6 @@ nav {
 .nav-logo {
   font-size: 1.25rem;
   font-weight: 800;
-  color: var(--primarys);
   letter-spacing: -0.5px;
 }
 
