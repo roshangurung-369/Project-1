@@ -1,11 +1,12 @@
+
 :root {
-  --bg: #0a0a0f;
-  --surface: #141420;
-  --border: #1e1e30;
-  --text: #f0f0f0;
-  --text-muted: #7070a0;
-  --primary: #e8ff47;
-  --secondary: #ff5c38;
+  --bg: #09090e;         
+  --surface: #12121c;    
+  --border: #222233;     
+  --text: #ffffff;       
+  --text-muted: #8888aa; 
+  --primary: #d4ff00;    
+  --secondary: #ff4500;  
 }
 
 *,
@@ -23,6 +24,9 @@ body {
   line-height: 1.5;
 }
 
+/* ==========================================
+   2. NAVIGATION BAR (NEW)
+   ========================================== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -32,35 +36,34 @@ nav {
   padding: 1.2rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 100; /* Keeps navbar on top of everything else when scrolling */
 }
 
-.nav-logo {
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--text);
-  letter-spacing: -0.5px;
+.nav-logo { 
+  font-family: 'Bebas Neue', sans-serif; 
+  font-size: 1.8rem; 
+  letter-spacing: 1px; 
 }
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 2rem;
+.nav-links { 
+  display: flex; 
+  gap: 1.5rem; 
+  list-style: none; 
 }
 
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+.nav-links a { 
+  color: var(--text-muted); 
+  text-decoration: none; 
+  font-size: 0.9rem; 
+  transition: color 0.2s ease; 
 }
 
+/* Hover state: turns bright white when hovered */
 .nav-links a:hover {
   color: var(--text);
 }
 
+/* Active state: highlights the current page in neon yellow */
 .nav-links a.active {
   color: var(--primary);
   font-weight: 700;

@@ -1,20 +1,20 @@
-
-    :root {
-      --bg: #0a0a0f;
-      --surface: #141420;
-      --border: #1e1e30;
-      --text: #f0f0f0;
-      --text-muted: #7070a0;
-      --primary: #e8ff47;  
-      --secondary: #ff5c38;
-    }
+:root {
+  --bg: #09090e;         
+  --surface: #12121c;    
+  --border: #222233;     
+  --text: #ffffff;       
+  --text-muted: #8888aa; 
+  --primary: #d4ff00;    
+  --secondary: #ff4500;  
+}
 
     *, *::before, *::after { 
       box-sizing: border-box; 
       margin: 0; 
       padding: 0; 
     }
-
+    
+    
     body { 
       background: var(--bg); 
       color: var(--text); 
@@ -25,31 +25,51 @@
       min-height: 100vh;
     }
 
-    .page-hero { 
-      padding: 4rem 2rem 1rem;
-      text-align: center;
+    nav { 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
+      padding: 1.2rem 2rem; 
+      background: var(--surface); 
+      border-bottom: 1px solid var(--border); 
     }
 
-    .page-hero h1 { 
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 3.5rem;
-      letter-spacing: 2px; 
-      text-transform: uppercase;
+    .nav-logo { 
+      font-family: 'Bebas Neue', sans-serif; 
+      font-size: 1.8rem; 
+      color: var(--primary); 
+      letter-spacing: 1px; 
+    }
+    
+    .nav-links { 
+      display: flex; 
+      gap: 1.5rem; 
+      list-style: none; 
+    }
+    
+    .nav-links a { 
+      color: var(--text-muted); 
+      text-decoration: none; 
+      font-size: 0.9rem; 
+      transition: color 0.2s ease; 
+    }
+    
+    .nav-links a:hover, .nav-links a.active { 
+      color: var(--primary); 
     }
 
-    .page-hero h1 span { color: var(--primary); }
+    .CAN{
+      Text-align: center;
+    }
 
-    .form-container {
-      max-width: 450px;
-      margin: 2rem auto 4rem;
-      background: var(--surface);
-      padding: 2.5rem;
-      border-radius: 12px;
+    #inputs {
       border: 1px solid var(--border);
-      width: 90%;
+      padding: 2rem 1rem;
+      background: var(--surface);
+      margin: auto auto auto;
+      border-radius: 1rem;
     }
 
-    .form-group { margin-bottom: 1.5rem; }
 
     label {
       display: block;
@@ -61,7 +81,6 @@
       letter-spacing: 1px;
     }
 
-    input[type="text"],
     input[type="email"],
     input[type="password"],
     select {
@@ -88,6 +107,14 @@
       font-size: 0.9rem;
       color: var(--text-muted);
       cursor: pointer;
+    }
+
+    .DHAA {
+      text-align: center;
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      padding: 0.5rem;
     }
 
     button[type="submit"] {
@@ -118,3 +145,5 @@
       color: var(--text-muted); 
       font-size: 0.85rem; 
     }
+
+    

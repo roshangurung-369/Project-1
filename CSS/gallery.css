@@ -33,7 +33,6 @@ nav {
 .nav-logo { 
   font-family: 'Bebas Neue', sans-serif; 
   font-size: 1.8rem; 
-  color: var(--primary); 
   letter-spacing: 1px; 
 }
 
@@ -54,50 +53,21 @@ nav {
   color: var(--primary); 
 }
 
-/* Hero Section */
-.page-hero { 
+.Heading { 
   padding: 4rem 2rem 2rem;
   text-align: center;
 }
 
-.page-hero h1 { 
+.Heading h1 { 
   font-family: 'Bebas Neue', sans-serif;
   font-size: 3.5rem;
   letter-spacing: 2px; 
 }
 
-.page-hero h1 span { 
-  color: var(--primary);
-}
 
-.page-hero p {   
+.Heading p {   
   color: var(--text-muted);
   margin-top: 0.5rem; 
-}
-
-.filter-bar { 
-  display: flex; 
-  gap: 0.7rem;
-  justify-content: center; 
-  padding: 1rem 2rem 3rem; 
-}
-
-.filter-btn { 
-  padding: 0.5rem 1.2rem; 
-  background: transparent; 
-  border: 1px solid var(--border); 
-  border-radius: 6px; 
-  color: var(--text); 
-  font-family: inherit; 
-  font-size: 0.85rem; 
-  cursor: pointer; 
-  transition: all 0.2s ease; 
-}
-
-.filter-btn.active, .filter-btn:hover {
-  background: var(--primary); 
-  color: #000; 
-  border-color: var(--primary); 
 }
 
 .gallery { 
@@ -166,9 +136,6 @@ nav {
   padding: 2rem;
 }
 
-.lightbox:target {
-  display: flex; 
-}
 
 .lightbox img { 
   max-width: 90vw; 

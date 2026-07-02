@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sport Week | Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/gallery.css" />
+  
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="JS/gallery-lightbox.js" defer></script>
+</head>
+<body>
+
+  <nav>
+   <span class="nav-logo">SportWeek</span>
+   <ul class="nav-links">
+     <li><a href="home.html">Home</a></li>
+     <li><a href="gallery.html">Gallery</a></li>
+     <li><a href="schedule.html">Schedule</a></li>
+     <li><a href="contact.html">Contact</a></li>
+     <li><a href="register.html">Register</a></li>
+   </ul>
+  </nav>
+
+<div class="Heading">
+  <h1>SPORT <span>GALLERY</span></h1>
+  <p>Highlights from Sport Week events — click to open</p>
+</div>
+
+<div class="gallery">
+
+  <div class="gallery-item featured">
+    <a href="javascript:void(0)" data-target="#lb1"><img src="Sports images/football.jpg" alt="Football match" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Featured</span>
+      <h3>Championship Final — Football</h3>
+      <p>Semi-final clash between Team Alpha & Team Beta · June 3</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="javascript:void(0)" data-target="#lb2"><img src="Sports images/basketball.jpg" alt="Basketball" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Basketball</span>
+      <h3>Slam Dunk Contest</h3>
+      <p>Indoor court · May 31</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="javascript:void(0)" data-target="#lb3"><img src="Sports images/swimming.jpg" alt="Swimming" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Swimming</span>
+      <h3>100m Freestyle Heat</h3>
+      <p>Olympic pool · June 1</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="javascript:void(0)" data-target="#lb4"><img src="Sports images/training.jpg" alt="Training" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Athletics</span>
+      <h3>Sprint Finals</h3>
+      <p>Main track · June 2</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="javascript:void(0)" data-target="#lb5"><img src="Sports images/training.jpg" alt="Training" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Training</span>
+      <h3>Morning Warm-Up</h3>
+      <p>Outdoor field · Daily 6 AM</p>
+    </div>
+  </div>
+
+  <div class="gallery-item">
+    <a href="javascript:void(0)" data-target="#lb6"><img src="Sports images/volleyball.jpg" alt="Volleyball" loading="lazy" /></a>
+    <div class="gallery-overlay">
+      <span class="tag">Volleyball</span>
+      <h3>Beach Volleyball</h3>
+      <p>Court B · June 1</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="lightbox" id="lb1">
+  <a href="javascript:void(0)" class="lightbox-close">&times;</a>
+  <img src="Sports images/football.jpg" alt="Football" />
+  <span class="lightbox-caption">Championship Final — Football</span>
+</div>
+<div class="lightbox" id="lb2">
+  <a href="javascript:void(0)" class="lightbox-close">&times;</a>
+  <img src="Sports images/basketball.jpg" alt="Basketball" />
+  <span class="lightbox-caption">Slam Dunk Contest</span>
+</div>
+<div class="lightbox" id="lb3">
+  <a href="javascript:void(0)" class="lightbox-close">&times;</a>
+  <img src="Sports images/swimming.jpg" alt="Swimming" />
+  <span class="lightbox-caption">100m Freestyle Heat</span>
+</div>
+<div class="lightbox" id="lb4">
+  <a href="javascript:void(0)" class="lightbox-close">&times;</a>
+  <img src="Sports images/athletics.jpg" alt="Athletics" />
+  <span class="lightbox-caption">Sprint Finals</span>
+</div>
+<div class="lightbox" id="lb5">
+  <a href="javascript:void(0)" class="lightbox-close">&times;</a>
+  <img src="Sports images/training.jpg" alt="Training" />
+  <span class="lightbox-caption">Morning Warm-Up</span>
+</div>
+<div class="lightbox" id="lb6">
+  <a href="javascript:void(0)" class="lightbox-close">&times;</a>
+  <img src="Sports images/volleyball.jpg" alt="Volleyball" />
+  <span class="lightbox-caption">Beach Volleyball</span>
+</div>
+
+</body>
+</html>
