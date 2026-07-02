@@ -24,9 +24,6 @@ body {
   line-height: 1.5;
 }
 
-/* ==========================================
-   2. NAVIGATION BAR (NEW)
-   ========================================== */
 nav {
   display: flex;
   justify-content: space-between;
@@ -36,7 +33,7 @@ nav {
   padding: 1.2rem 2rem;
   position: sticky;
   top: 0;
-  z-index: 100; /* Keeps navbar on top of everything else when scrolling */
+  z-index: 100;
 }
 
 .nav-logo { 
@@ -58,12 +55,10 @@ nav {
   transition: color 0.2s ease; 
 }
 
-/* Hover state: turns bright white when hovered */
 .nav-links a:hover {
   color: var(--text);
 }
 
-/* Active state: highlights the current page in neon yellow */
 .nav-links a.active {
   color: var(--primary);
   font-weight: 700;
