@@ -2,11 +2,17 @@
 :root {
   --bg: #09090e;
   --surface: #12121c;
-  --border: #222233;
+  --border: #252538;
   --text: #ffffff;
   --text-muted: #8888aa;
   --primary: #d4ff00;
   --secondary: #ff4500;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 body {
