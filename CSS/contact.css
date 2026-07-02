@@ -1,3 +1,4 @@
+
 :root {
   --bg: #09090e;         
   --surface: #12121c;    
@@ -23,13 +24,19 @@ body {
   line-height: 1.5;
 }
 
-nav { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  padding: 1.2rem 2rem; 
-  background: var(--surface); 
-  border-bottom: 1px solid var(--border); 
+/* ==========================================
+   2. NAVIGATION BAR (NEW)
+   ========================================== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* Keeps navbar on top of everything else when scrolling */
 }
 
 .nav-logo { 
@@ -51,8 +58,15 @@ nav {
   transition: color 0.2s ease; 
 }
 
-.nav-links a:hover, .nav-links a.active { 
-  color: var(--primary); 
+/* Hover state: turns bright white when hovered */
+.nav-links a:hover {
+  color: var(--text);
+}
+
+/* Active state: highlights the current page in neon yellow */
+.nav-links a.active {
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .form-container {
