@@ -1,28 +1,31 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById("loginForm").addEventListener("submit", function(event){
 
     event.preventDefault();
 
-    const emailInput = document.getElementById('email').value;
-    const passwordInput = document.getElementById('password').value;
+    const emailInput = document.getElementById("email").value;
+    const passwordInput = document.getElementById("password").value;
 
-    const savedDataString = localStorage.getItem('registeredUser');
+    let users = JSON.parse(localStorage.getItem("registeredUsers")) || [];
 
-    if (!savedDataString) {
-        alert("No registered user found! Please register an account first.");
-        window.location.href = "register.html"; 
+    const foundUser = users.find(user =>
+        user.email === emailInput &&
+        user.password === passwordInput
+    );
+
+    if(foundUser){
+
+        alert("Login Successful! Welcome " + foundUser.name + "!");
+
+        sessionStorage.setItem("isLoggedIn", "true");
+
+        sessionStorage.setItem("currentUser", JSON.stringify(foundUser));
+
+        window.location.href = "home.html";
+
+    }else{
+
+        alert("Invalid Email or Password.");
+
     }
 
-    const userData = JSON.parse(savedDataString);
-
-    
-    if (emailInput === userData.email && passwordInput === userData.password) {
-       
-        alert("Login successful! Welcome back, " + userData.name + "!");
-        
-        sessionStorage.setItem('isLoggedIn', 'true');
-        
-        window.location.href = "home.html"; 
-    } else {
-        alert("Invalid email or password. Please try again.");
-    }
 });

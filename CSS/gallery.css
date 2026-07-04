@@ -53,6 +53,24 @@ nav {
   color: var(--primary); 
 }
 
+#profileArea{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+#profilePic{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+#profileName{
+    color:white;
+    font-weight:bold;
+}
+
 .Heading { 
   padding: 4rem 2rem 2rem;
   text-align: center;

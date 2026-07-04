@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="JS/profile.js" defer></script>
 </head>
 <body>
 
@@ -19,30 +20,38 @@
     <li><a href="gallery.html">Gallery</a></li>
     <li><a href="schedule.html">Schedule</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="register.html">Register</a></li>
+    <li id="registerNav"><a href="register.html">Register</a></li>
   </ul>
+
+  <div id="profileArea">
+        <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
+    <span id="profileName"></span>
+
+</div>
 </nav>
 
-    <form class="contact-form">
+    <form class="contact-form"
+      action="https://formsubmit.co/lolmaster1254@gmail.com"
+      method="POST">
 
         <div>
         <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" placeholder="Full Name">
+        <input type="text" id="full-name" name="name" placeholder="Full Name" required>
         </div>
         
         <div>
         <label for ="email">Email address</label>
-        <input type="email" id="email" placeholder="emailhere@gmail.com">
+        <input type="email" id="email" name="email" placeholder="emailhere@gmail.com" required>
         </div>
 
         <div>
         <label for="subject">Subject</label>
-        <input type="text" id="subject" placeholder="Enter your subject"></label>
+        <input type="text" id="subject" name="subject" placeholder="Enter your subject" required></label>
         </div>
 
         <div>
         <label for="message">Message</label>
-        <textarea id="message" placeholder="Your querries?"></textarea>
+        <textarea id="message" name="message" placeholder="Your querries?" required></textarea>
         </div>
 
         <button type="submit">Submit</button>

@@ -57,6 +57,24 @@
       color: var(--primary); 
     }
 
+    #profileArea{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    }
+    
+    #profilePic{
+        width:40px;
+        height:40px;
+        border-radius:50%;
+        object-fit:cover;
+    }
+    
+    #profileName{
+        color:white;
+        font-weight:bold;
+    }
+
     .CAN{
       Text-align: center;
     }

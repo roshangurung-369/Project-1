@@ -15,14 +15,22 @@ document.getElementById('registerForm').addEventListener('submit', function(even
     }
 
     const userData = {
-        name: fullName,
-        email: email,
-        username: username,
-        password: password, 
-        gender: gender
+    name: fullName,
+    email: email,
+    username: username,
+    password: password,
+    gender: gender,
+    profilePic: "profile-images/default-pic.jpg"
     };
 
     let users = JSON.parse(localStorage.getItem('registeredUsers')) || [];
+
+    const existingUser = users.find(user => user.email === email);
+
+    if(existingUser){
+        alert("An account with this email already exists.");
+        return;
+    }
 
     users.push(userData);
 
