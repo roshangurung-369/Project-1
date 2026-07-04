@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sport Week | Gallery</title>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/navbar.css">
   <link rel="stylesheet" href="CSS/gallery.css" />
-  
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="JS/gallery-lightbox.js" defer></script>
   <script src="JS/profile.js" defer></script>
@@ -23,10 +23,27 @@
      <li id="registerNav"><a href="register.html">Register</a></li>
    </ul>
 
-   <div id="profileArea">
-     <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
-     <span id="profileName"></span>
-   </div>
+<div id="profileArea">
+
+    <div id="profileMenu">
+
+        <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
+
+        <span id="profileName"></span>
+
+        <span id="arrow">▼</span>
+
+    </div>
+
+    <div id="dropdownMenu">
+
+        <a href="#">My Profile</a>
+        <a href="#" id="logoutBtn">Logout</a>
+        <a href="Q&A.html" id="qnabtn">Q&A</a>
+
+    </div>
+
+</div>
   </nav>
 
 <div class="Heading">

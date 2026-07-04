@@ -1,0 +1,140 @@
+:root {
+  --bg: #09090e; 
+  --surface: #12121c;
+  --card: #181826; 
+  --border: #252538; 
+  --text: #ffffff;    
+  --muted: #8888aa;
+  --primary: #d4ff00;   
+  --accent: #ff4500; 
+  --pp : #3CD460; 
+}
+
+nav { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+  padding: 1.2rem 2rem; 
+  background: var(--surface); 
+  border-bottom: 1px solid var(--border); 
+}
+
+.nav-logo { 
+  font-family: 'Bebas Neue', sans-serif; 
+  font-size: 1.8rem; 
+  letter-spacing: 1px; 
+}
+
+.nav-links { 
+  display: flex; 
+  gap: 1.5rem; 
+  list-style: none; 
+}
+
+.nav-links a { 
+  color: var(--text-muted); 
+  text-decoration: none; 
+  font-size: 0.9rem; 
+  transition: color 0.2s ease; 
+}
+
+.nav-links a:hover,
+.nav-links a.active { 
+  color: var(--primary); 
+}
+
+#profileArea{
+    display:none;
+    position:relative;
+    align-items:center;
+    gap:10px;
+    background: var(--pp);
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+#profileMenu{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+}
+
+#profilePic{
+    width:40px;
+    height:40px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+#profileName{
+    color:white;
+    font-weight:bold;
+}
+
+#logoutBtn{
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.9rem;
+    display: none;
+    transition: opacity 0.2s ease;
+}
+
+#logoutBtn:hover{
+    opacity: 0.9;
+}
+
+#arrow{
+    font-size:12px;
+    color:white;
+}
+
+#dropdownMenu{
+    display:none;
+    position:absolute;
+    top:55px;
+    right:0;
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:8px;
+    min-width:170px;
+    overflow:hidden;
+}
+
+#dropdownMenu a{
+    display:block;
+    padding:12px 15px;
+    text-decoration:none;
+    color:white;
+    transition:0.2s;
+}
+
+#dropdownMenu a:hover{
+    background:var(--primary);
+    color:black;
+}
+    
+@media (max-width: 768px){
+
+    nav{
+        flex-direction: column;
+        gap: 15px;
+        padding: 1rem;
+    }
+
+    .nav-links{
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    #profileArea{
+        justify-content: center;
+    }
+
+}

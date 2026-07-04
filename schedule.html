@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Simple Calendar</title>
+    <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/schedule.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,10 +23,27 @@
     <li id="registerNav"><a href="register.html">Register</a></li>
   </ul>
 
-  <div id="profileArea">
-    <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
-    <span id="profileName"></span>
-  </div>
+<div id="profileArea">
+
+    <div id="profileMenu">
+
+        <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
+
+        <span id="profileName"></span>
+
+        <span id="arrow">▼</span>
+
+    </div>
+
+    <div id="dropdownMenu">
+
+        <a href="#">My Profile</a>
+        <a href="#" id="logoutBtn">Logout</a>
+        <a href="Q&A.html" id="qnabtn">Q&A</a>
+
+    </div>
+
+</div>
   </nav>
 
     <h2 id="monthYear"></h2>

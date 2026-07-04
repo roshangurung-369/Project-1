@@ -5,9 +5,8 @@
   --border: #252538; 
   --text: #ffffff;    
   --muted: #8888aa;
-  --primary: #d4ff00;   
-  --accent: #22c55e; 
-  --accent2: #ff4500;  
+  --primary: #d4ff00; 
+  --accent: #ff4500;  
 }
 
 *{
@@ -20,56 +19,6 @@ body{
   background:var(--bg);
   color:var(--text);
   font-family:'DM Sans',sans-serif;
-}
-
-nav { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  padding: 1.2rem 2rem; 
-  background: var(--surface); 
-  border-bottom: 1px solid var(--border); 
-}
-
-.nav-logo { 
-  font-family: 'Bebas Neue', sans-serif; 
-  font-size: 1.8rem; 
-  letter-spacing: 1px; 
-}
-
-.nav-links { 
-  display: flex; 
-  gap: 1.5rem; 
-  list-style: none; 
-}
-
-.nav-links a { 
-  color: var(--muted); 
-  text-decoration: none; 
-  font-size: 0.9rem; 
-  transition: color 0.2s ease; 
-}
-
-.nav-links a:hover, .nav-links a.active { 
-  color: var(--primary); 
-}
-
-#profileArea{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-#profilePic{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-#profileName{
-    color:white;
-    font-weight:bold;
 }
 
 header{
@@ -87,20 +36,6 @@ h1{
   margin-top:1rem;
 }
 
-section{
-  max-width:900px;
-  margin:2rem auto;
-  padding:0 1rem;
-}
-
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:10px;
-  padding:1rem;
-  margin-bottom:1rem;
-}
-
 .sport-manager { 
   max-width: 900px; 
   margin: 3rem auto; 
@@ -111,7 +46,7 @@ section{
   font-family: 'Bebas Neue', sans-serif; 
   font-size: 2rem; 
   letter-spacing: 2px; 
-  border-left: 4px solid var(--accent); 
+  border-left: 4px solid var(--primary); 
   padding-left: 1rem; 
   margin-bottom: 2rem; 
 }
@@ -142,12 +77,12 @@ section{
 }
 
 .sm-controls select:focus, .sm-controls input:focus { 
-  border-color: var(--accent); 
+  border-color: var(--primary); 
 }
 
 .sm-controls button { 
   padding: .75rem 1.8rem; 
-  background: var(--accent); 
+  background: var(--primary); 
   color: #000000; 
   border-radius: 8px; 
   font-family: inherit; 
@@ -165,16 +100,7 @@ section{
   transform: scale(.97); 
 }
 
-input, select, button {
-  padding: .7rem 1rem;
-  border-radius: 6px;
-  border: 1px solid var(--border);
-}
 
-button {
-  background: var(--accent);
-  cursor: pointer;
-}
 
 .sport-sections { 
   display: grid; 
@@ -191,7 +117,7 @@ button {
 }
 
 .sport-card:hover { 
-  border-color: var(--accent2); 
+  border-color: var(--accent); 
 }
 
 .sport-card-header { 
@@ -230,7 +156,7 @@ button {
 
 .player-list li::before { 
   content: '▸'; 
-  color: var(--accent); 
+  color: var(--primary); 
   font-size: .7rem; 
 }
 
@@ -253,7 +179,7 @@ button {
 }
 
 .remove-btn:hover { 
-  color: var(--accent2); 
+  color: var(--accent); 
   background: rgba(255, 69, 0, 0.1);
 }
 

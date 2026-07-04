@@ -24,56 +24,6 @@ body {
   flex-direction: column;
 }
 
-nav { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  padding: 1.2rem 2rem; 
-  background: var(--surface); 
-  border-bottom: 1px solid var(--border); 
-}
-
-.nav-logo { 
-  font-family: 'Bebas Neue', sans-serif; 
-  font-size: 1.8rem; 
-  letter-spacing: 1px; 
-}
-
-.nav-links { 
-  display: flex; 
-  gap: 1.5rem; 
-  list-style: none; 
-}
-
-.nav-links a { 
-  color: var(--text-muted); 
-  text-decoration: none; 
-  font-size: 0.9rem; 
-  transition: color 0.2s ease; 
-}
-
-.nav-links a:hover, .nav-links a.active { 
-  color: var(--primary); 
-}
-
-#profileArea{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-#profilePic{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-#profileName{
-    color:white;
-    font-weight:bold;
-}
-
 .calendar-container {
   width: 700px;
   margin: 3rem auto;

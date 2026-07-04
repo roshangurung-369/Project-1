@@ -22,64 +22,6 @@ body {
   line-height: 1.5;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  padding: 1.2rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.nav-logo { 
-  font-family: 'Bebas Neue', sans-serif; 
-  font-size: 1.8rem; 
-  letter-spacing: 1px; 
-}
-
-.nav-links { 
-  display: flex; 
-  gap: 1.5rem; 
-  list-style: none; 
-}
-
-.nav-links a { 
-  color: var(--text-muted); 
-  text-decoration: none; 
-  font-size: 0.9rem; 
-  transition: color 0.2s ease; 
-}
-
-.nav-links a:hover {
-  color: var(--text);
-}
-
-.nav-links a.active {
-  color: var(--primary);
-  font-weight: 700;
-}
-
-#profileArea{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-#profilePic{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-#profileName{
-    color:white;
-    font-weight:bold;
-}
-
 .form-container {
   padding: 4rem 1rem;
 }
@@ -157,18 +99,6 @@ nav {
 }
 
 @media (max-width: 640px) {
-
-  nav {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .nav-links {
-    gap: 1.2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 
   .form-container {
     padding: 2rem 1rem;

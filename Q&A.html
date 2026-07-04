@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sport Week Management System - Q&A" />
+  <meta name="keywords" content="sport, week, management, schedule, qa, faq" />
+  <meta name="author" content="Sport Week" />
+  <title>Sport Week | Q&A</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/navbar.css">
+  <link rel="stylesheet" href="CSS/qna.css" />
+  <script src="JS/qna.js" defer></script>
+  <script src="JS/profile.js" defer></script>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">SportWeek</span>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="schedule.html">Schedule</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li id="registerNav"><a href="register.html">Register</a></li>
+  </ul>
+    <div id="profileArea">
+    
+        <div id="profileMenu">
+    
+            <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
+    
+            <span id="profileName"></span>
+    
+            <span id="arrow">▼</span>
+    
+        </div>
+    
+        <div id="dropdownMenu">
+    
+            <a href="#">My Profile</a>
+            <a href="#" id="logoutBtn">Logout</a>
+            <a href="Q&A.html" id="qnabtn">Q&A</a>
+    
+        </div>
+</nav>
+
+<header>
+  <div class="hero-tag">🙋‍♂️ Got Questions?</div>
+  <h1>QUESTIONS &<br/><span>ANSWERS</span></h1>
+  <p class="hero-sub">Everything you need to know about Sport Week matches, equipment, rules, and schedules.</p>
+</header>
+
+<section class="qa-manager" aria-label="Frequently Asked Questions">
+  <h2 class="qa-title">Frequently Asked Questions</h2>
+  
+  <div class="accordion-container">
+    
+    <details class="qa-card">
+      <summary class="qa-question">Can I participate in more than one game?</summary>
+      <div class="qa-answer">
+        <p>Yes! You can register for up to <strong>two different sports</strong>, provided their match schedules do not overlap. Please complete a registration step for each sport you want to try out.</p>
+      </div>
+    </details>
+
+    <details class="qa-card">
+      <summary class="qa-question">What is the deadline for registration?</summary>
+      <div class="qa-answer">
+        <p>All registrations must be submitted by Friday at 5:00 PM. No late entries will be accepted so we can finalize the tournament brackets in time.</p>
+      </div>
+    </details>
+
+    <details class="qa-card">
+      <summary class="qa-question">Do I need to bring my own equipment?</summary>
+      <div class="qa-answer">
+        <p>We provide basic tournament equipment like footballs, basketballs, and tennis nets. However, you must bring your own personal gear like athletic running shoes, shin guards, and tennis rackets.</p>
+      </div>
+    </details>
+
+    <details class="qa-card">
+      <summary class="qa-question">What happens if it rains on game day?</summary>
+      <div class="qa-answer">
+        <p>Indoor sports (like Basketball) will proceed exactly as planned. Outdoor matches will either be delayed or moved to alternative indoor spaces if available. Check the announcement board on morning of the event!</p>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<footer>
+  <address>
+    SportWeek HQ Kathmandu, Nepal ;
+    <a href="mailto:info@sportweek.np">info@sportweek.np</a>
+  </address>
+  <p> 2025 SportWeek. All rights reserved.</p>
+</footer>
+    
+</body>
+</html>

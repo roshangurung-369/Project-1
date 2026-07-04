@@ -21,56 +21,6 @@ body {
   line-height: 1.5;
 }
 
-nav { 
-  display: flex; 
-  align-items: center; 
-  justify-content: space-between; 
-  padding: 1.2rem 2rem; 
-  background: var(--surface); 
-  border-bottom: 1px solid var(--border); 
-}
-
-.nav-logo { 
-  font-family: 'Bebas Neue', sans-serif; 
-  font-size: 1.8rem; 
-  letter-spacing: 1px; 
-}
-
-.nav-links { 
-  display: flex; 
-  gap: 1.5rem; 
-  list-style: none; 
-}
-
-.nav-links a { 
-  color: var(--text-muted); 
-  text-decoration: none; 
-  font-size: 0.9rem; 
-  transition: color 0.2s ease; 
-}
-
-.nav-links a:hover, .nav-links a.active { 
-  color: var(--primary); 
-}
-
-#profileArea{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-#profilePic{
-    width:40px;
-    height:40px;
-    border-radius:50%;
-    object-fit:cover;
-}
-
-#profileName{
-    color:white;
-    font-weight:bold;
-}
-
 .Heading { 
   padding: 4rem 2rem 2rem;
   text-align: center;
@@ -117,32 +67,6 @@ nav {
   display: block;
 }
 
-.gallery-details {
-  padding: 1rem;
-}
-
-.gallery-details .tag { 
-  display: inline-block; 
-  background: rgba(232, 255, 71, 0.1); 
-  color: var(--primary); 
-  font-size: 0.7rem; 
-  font-weight: 700; 
-  padding: 2px 8px; 
-  border-radius: 4px; 
-  margin-bottom: 0.5rem; 
-}
-
-.gallery-details h3 { 
-  font-size: 1.1rem; 
-  color: var(--text); 
-}
-
-.gallery-details p { 
-  font-size: 0.85rem; 
-  color: var(--text-muted); 
-  margin-top: 0.2rem; 
-}
-
 .lightbox {
   position: fixed; 
   inset: 0; 
@@ -173,12 +97,4 @@ nav {
 
 .lightbox-close:hover { 
   color: var(--primary); 
-}
-
-footer { 
-  text-align: center; 
-  padding: 3rem 2rem; 
-  border-top: 1px solid var(--border); 
-  color: var(--text-muted); 
-  font-size: 0.85rem; 
 }

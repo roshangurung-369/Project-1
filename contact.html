@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
+    <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/contact.css">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
@@ -23,9 +23,25 @@
     <li id="registerNav"><a href="register.html">Register</a></li>
   </ul>
 
-  <div id="profileArea">
+<div id="profileArea">
+
+    <div id="profileMenu">
+
         <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
-    <span id="profileName"></span>
+
+        <span id="profileName"></span>
+
+        <span id="arrow">▼</span>
+
+    </div>
+
+    <div id="dropdownMenu">
+
+        <a href="#">My Profile</a>
+        <a href="#" id="logoutBtn">Logout</a>
+        <a href="Q&A.html" id="qnabtn">Q&A</a>
+
+    </div>
 
 </div>
 </nav>

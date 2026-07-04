@@ -9,6 +9,7 @@
   <title>Sport Week | Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="CSS/navbar.css">
     <link rel="stylesheet" href="CSS/home.css" />
     <script src="JS/home.js" defer></script>
     <script src="JS/home_username-save.js" defer></script>
@@ -27,8 +28,25 @@
   </ul>
 
   <div id="profileArea">
-    <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
-    <span id="profileName"></span>
+
+    <div id="profileMenu">
+
+        <img id="profilePic" src="profile-images/default-pic.jpg" alt="Profile">
+
+        <span id="profileName"></span>
+
+        <span id="arrow">▼</span>
+
+    </div>
+
+    <div id="dropdownMenu">
+
+        <a href="#">My Profile</a>
+        <a href="#" id="logoutBtn">Logout</a>
+        <a href="Q&A.html" id="qnabtn">Q&A</a>
+
+    </div>
+
 </div>
 </nav>
 
