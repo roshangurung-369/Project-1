@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="CSS/navbar.css">
+    <link rel="stylesheet" href="CSS/profile.css">
+
+    <script src="JS/profile.js" defer></script>
+    <script src="JS/profile-page.js" defer></script>
+</head>
+
+<body>
+
+<nav>
+
+    <span class="nav-logo">SPORTSWEEK</span>
+
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li id="registerNav"><a href="register.html">Register</a></li>
+    </ul>
+
+    <div id="profileArea">
+
+        <div id="profileMenu">
+
+            <img id="profilePic" src="profile-images/default-pic.jpg">
+
+            <span id="profileName"></span>
+
+            <span id="arrow">▼</span>
+
+        </div>
+
+        <div id="dropdownMenu">
+
+            <a href="profile.html">My Profile</a>
+            <a href="#" id="logoutBtn">Logout</a>
+            <a href="Q&A.html" id="qnabtn">Q&A</a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+<div class="profile-card">
+
+    <img id="bigProfilePic" src="profile-images/default-pic.jpg">
+
+    <h2 id="fullName"></h2>
+
+    <div class="info">
+        <p><strong>Username:</strong> <span id="username"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+        <p><strong>Gender:</strong> <span id="gender"></span></p>
+    </div>
+    <button id="logoutProfileBtn" class="logout-btn">Logout</button>
+</div>
+
+</body>
+</html>

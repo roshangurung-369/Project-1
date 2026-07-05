@@ -32,7 +32,7 @@ nav {
 }
 
 .nav-links a { 
-  color: var(--text-muted); 
+  color: var(--text); 
   text-decoration: none; 
   font-size: 0.9rem; 
   transition: color 0.2s ease; 
@@ -118,6 +118,10 @@ nav {
     color:black;
 }
     
+#dropdownMenu.show{
+    display:block;
+}
+
 @media (max-width: 768px){
 
     nav{

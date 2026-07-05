@@ -1,0 +1,153 @@
+:root {
+  --bg: #09090e;
+  --surface: #12121c;
+  --card: #181826;
+  --border: #252538;
+  --text: #ffffff;
+  --muted: #8888aa;
+  --primary: #d4ff00;
+  --accent: #ff4500;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'DM Sans',sans-serif;
+}
+
+.profile-container{
+    display:flex;
+    justify-content:center;
+    padding:60px 20px;
+}
+
+.profile-card{
+    width:100%;
+    max-width:500px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:35px;
+    margin:0 auto;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.35);
+}
+
+.profile-card h1{
+    margin-bottom:25px;
+    font-size:2rem;
+    color:var(--primary);
+    font-family:'Bebas Neue',sans-serif;
+    letter-spacing:2px;
+}
+
+#bigProfilePic{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--primary);
+    margin-bottom:20px;
+}
+
+#fullName{
+    font-size:1.8rem;
+    margin-bottom:8px;
+}
+
+#username{
+    color:var(--muted);
+    margin-bottom:25px;
+    display:block;
+}
+
+.info{
+    text-align:left;
+    margin-top:25px;
+}
+
+.info-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.info-item:last-child{
+    border-bottom:none;
+}
+
+.info-title{
+    color:var(--muted);
+    font-weight:600;
+}
+
+.info-value{
+    color:var(--text);
+    font-weight:bold;
+}
+
+.change-btn{
+    width:100%;
+    margin-top:30px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:var(--primary);
+    color:#000;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.change-btn:hover{
+    transform:translateY(-2px);
+}
+
+.logout-btn{
+    width:100%;
+    margin-top:15px;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:var(--accent);
+    color:white;
+    font-size:1rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.logout-btn:hover{
+    opacity:.9;
+    transform:translateY(-2px);
+}
+
+.logout-btn:active{
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+    .profile-card{
+        padding:25px;
+    }
+
+    #bigProfilePic{
+        width:110px;
+        height:110px;
+    }
+
+    #fullName{
+        font-size:1.5rem;
+    }
+
+}
