@@ -68,13 +68,12 @@ nav {
 }
 
 #profileName{
-    color:white;
+    color: var(--text);
     font-weight:bold;
 }
 
 #logoutBtn{
-    background: var(--secondary);
-    color: white;
+    color: var(--text);
     border: none;
     padding: 8px 14px;
     border-radius: 6px;
@@ -91,7 +90,7 @@ nav {
 
 #arrow{
     font-size:12px;
-    color:white;
+    color: var(--text);
 }
 
 #dropdownMenu{
@@ -110,7 +109,7 @@ nav {
     display:block;
     padding:12px 15px;
     text-decoration:none;
-    color:white;
+    color: var(--text);
     transition:0.2s;
 }
 
