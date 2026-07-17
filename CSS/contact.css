@@ -22,6 +22,14 @@ body {
   line-height: 1.5;
 }
 
+.CAN{
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-top: 4rem;
+  color: var(--text);
+}
 .form-container {
   padding: 4rem 1rem;
 }
