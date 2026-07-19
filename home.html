@@ -6,7 +6,7 @@
   <meta name="description" content="Sport Week Management System - Home" />
   <meta name="keywords" content="sport, week, management, schedule" />
   <meta name="author" content="Sport Week" />
-  <title>Sport Week | Home</title>
+  <title>Home</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="CSS/navbar.css">
@@ -51,30 +51,91 @@
 </nav>
 
 <header>
-  <div class="hero-tag">🏆 Sport Week 2025</div>
+  <div class="hero-tag">&#127942; Sport Week 2025</div>
   <h1>SPORT<br/><span>WEEK</span></h1>
   <p class="hero-sub">Manage participants across all sports events in one place. Select a sport, add a name, done.</p>
 </header>
 
-<section class="sport-manager" aria-label="Sport Participant Manager">
-  <h2 class="sm-title">Add Participants</h2>
-  <div class="sm-controls">
-    <select id="sportSelect" aria-label="Choose sport">
-      <option value="">Select Sport</option>
-      <option value="football">⚽ Football</option>
-      <option value="basketball">🏀 Basketball</option>
-      <option value="cricket">🏏 Cricket</option>
-      <option value="tennis">🎾 Tennis</option>
-      <option value="volleyball">🏐 Volleyball</option>
-      <option value="swimming">🏊 Swimming</option>
-    </select>
-    <input type="text" id="playerName" placeholder="Enter participant name…" aria-label="Participant name" maxlength="40" />
-    <button onclick="addPlayer()">Add</button>
-  </div>
+<section class="sports-section">
 
-  <div class="sport-sections" id="sportSections">
-  </div>
+    <h2 class="section-title">Choose Your Sport</h2>
+    <p class="section-subtitle">
+        Select the sport you want to participate in.
+    </p>
+
+    <div class="sports-grid">
+
+        <div class="sport-card" data-sport="Football" data-type="team">
+            <div class="sport-icon">&#9917;</div>
+            <h3>Football</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+        <div class="sport-card" data-sport="Basketball" data-type="team">
+            <div class="sport-icon">&#127936;</div>
+            <h3>Basketball</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+        <div class="sport-card" data-sport="Volleyball" data-type="team">
+            <div class="sport-icon">&#127952;</div>
+            <h3>Volleyball</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+        <div class="sport-card" data-sport="Badminton" data-type="single">
+            <div class="sport-icon">&#127992;</div>
+            <h3>Badminton</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+        <div class="sport-card" data-sport="Athletics" data-type="single">
+            <div class="sport-icon">&#127939;</div>
+            <h3>Athletics</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+        <div class="sport-card" data-sport="Chess" data-type="single">
+            <div class="sport-icon">&#9818;</div>
+            <h3>Chess</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+        <div class="sport-card" data-sport="Relay Race" data-type="team">
+            <div class="sport-icon">&#128136;</div>
+            <h3>Relay Race</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+        <div class="sport-card" data-sport="Table Tennis" data-type="single">
+            <div class="sport-icon">&#127934;</div>
+            <h3>Table Tennis</h3>
+            <button class="participate-btn">Participate</button>
+        </div>
+
+    </div>
+
 </section>
+
+<div id="registrationModal" class="modal">
+
+    <div class="modal-content">
+
+        <span id="closeModal">&times;</span>
+
+        <h2 id="modalTitle"></h2>
+
+        <form id="registrationForm">
+
+            <div id="dynamicFields"></div>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+    </div>
+
+</div>
 
 <footer>
   <address>

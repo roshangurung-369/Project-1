@@ -1,58 +1,51 @@
+const modal = document.getElementById("registrationModal");
+const modalTitle = document.getElementById("modalTitle");
+const dynamicFields = document.getElementById("dynamicFields");
+const closeModal = document.getElementById("closeModal");
 
-  const SPORTS = {
-    football:   { label: '⚽ Football',   icon: '⚽' },
-    basketball: { label: '🏀 Basketball', icon: '🏀' },
-    cricket:    { label: '🏏 Cricket',    icon: '🏏' },
-    tennis:     { label: '🎾 Tennis',     icon: '🎾' },
-    volleyball: { label: '🏐 Volleyball', icon: '🏐' },
-    swimming:   { label: '🏊 Swimming',   icon: '🏊' },
-  };
+const participateButtons = document.querySelectorAll(".participate-btn");
 
-  const data = JSON.parse(localStorage.getItem('sportWeekData') || '{}');
-  Object.keys(SPORTS).forEach(s => { if (!data[s]) data[s] = []; });
+participateButtons.forEach(button => {
 
-  function save() { localStorage.setItem('sportWeekData', JSON.stringify(data)); }
+    button.addEventListener("click", function () {
 
-  function render() {
-    const container = document.getElementById('sportSections');
-    container.innerHTML = '';
-    Object.entries(SPORTS).forEach(([key, meta]) => {
-      const players = data[key] || [];
-      const card = document.createElement('div');
-      card.className = 'sport-card';
-      card.innerHTML = `
-        <div class="sport-card-header">
-          <span class="sport-icon">${meta.icon}</span>
-          <span class="sport-name">${meta.label.split(' ').slice(1).join(' ')}</span>
-          <small style="margin-left:auto;color:var(--muted)">${players.length}</small>
-        </div>
-        <ul class="player-list" id="list-${key}">
-          ${players.length === 0
-            ? '<li class="empty-msg" style="background:none;padding-left:.2rem">No participants yet</li>'
-            : players.map((n, i) => `<li>${n}<button class="remove-btn" onclick="removePlayer('${key}', ${i})">✕</button></li>`).join('')}
-        </ul>`;
-      container.appendChild(card);
+        const card = this.parentElement;
+
+        const sport = card.dataset.sport;
+        const type = card.dataset.type;
+
+        modalTitle.textContent = sport + " Registration";
+
+        if (type === "team") {
+
+            dynamicFields.innerHTML = `
+                <input type="text" placeholder="Team Name" required>
+
+                <input type="text" placeholder="Captain Name" required>
+
+                <input type="text" placeholder="Contact Number" required>
+            `;
+
+        }
+
+        else {
+
+            dynamicFields.innerHTML = `
+                <input type="text" placeholder="Player Name" required>
+
+                <input type="text" placeholder="Contact Number" required>
+            `;
+
+        }
+
+        modal.style.display = "flex";
+
     });
-  }
 
-  function addPlayer() {
-    const sport = document.getElementById('sportSelect').value;
-    const name  = document.getElementById('playerName').value.trim();
-    if (!sport) { alert('Please select a sport first.'); return; }
-    if (!name)  { alert('Please enter a participant name.'); return; }
-    data[sport].push(name);
-    save(); render();
-    document.getElementById('playerName').value = '';
-    document.getElementById('sportSelect').value = '';
-  }
+});
 
-  function removePlayer(sport, idx) {
-    data[sport].splice(idx, 1);
-    save(); render();
-  }
+closeModal.addEventListener("click", function () {
 
-  document.getElementById('playerName').addEventListener('keydown', e => {
-    if (e.key === 'Enter') addPlayer();
-  });
+    modal.style.display = "none";
 
-  render();
+});
