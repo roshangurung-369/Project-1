@@ -1,13 +1,13 @@
 :root {
-  --bg: #09090e; 
-  --surface: #12121c;
-  --card: #181826; 
-  --border: #252538; 
-  --text: #ffffff;    
-  --muted: #8888aa;
-  --primary: #d4ff00;   
-  --accent: #ff4500; 
-  --pp : #3CD460; 
+  --bg: #ebe4f7;
+  --surface: #fff8f5;
+  --card: #f8dfd4;
+  --border: #cbb9df;
+  --text: #30224f;
+  --muted: #675c78;
+  --primary: #7048b8;
+  --accent: #bd3b3b;
+  --pp: #d96c75;
 }
 
 nav { 

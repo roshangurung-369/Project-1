@@ -1,11 +1,13 @@
 :root {
-  --bg: #09090e;         
-  --surface: #12121c;    
-  --border: #222233;     
-  --text: #ffffff;       
-  --text-muted: #8888aa; 
-  --primary: #d4ff00;    
-  --secondary: #ff4500;  
+  --bg: #ebe4f7;          /* Light lavender background */
+  --surface: #fff8f5;     /* Soft peach-white surfaces */
+  --border: #cbb9df;      /* Lavender border */
+
+  --text: #30224f;        /* Deep purple text */
+  --text-muted: #675c78;  /* Muted purple */
+
+  --primary: #7048b8;     /* Lavender purple */
+  --secondary: #bd3b3b;   /* Crimson */
 }
 
  *{ 

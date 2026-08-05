@@ -1,14 +1,14 @@
 :root {
-  --bg: #09090e; 
-  --surface: #12121c;
-  --card: #181826; 
-  --border: #252538; 
-  --text: #ffffff;    
-  --muted: #8888aa;
-  --primary: #d4ff00; 
-  --accent: #ff4500;  
+  --bg: #ebe4f7;
+  --surface: #f5f0fc;
+  --card: #fff8f5;
+  --border: #cbb9df;
+  --text: #30224f;
+  --muted: #675c78;
+  --primary: #7048b8;
+  --accent: #bd3b3b;
+  --peach: #f8dfd4;
 }
-
 *{
   margin:0;
   padding:0;
@@ -110,7 +110,9 @@ h1{
     inset:0;
     background:rgba(0,0,0,.75);
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
+    overflow-y:auto;
+    padding:30px;
     z-index:999;
 }
 
@@ -137,6 +139,11 @@ h1{
     text-align:center;
     color:var(--primary);
     margin-bottom:25px;
+}
+
+#addPlayer:disabled{
+    opacity:.5;
+    cursor:not-allowed;
 }
 
 #registrationForm input{
@@ -169,10 +176,108 @@ h1{
     opacity:.9;
 }
 
+#addPlayer,
+#addSubstitute{
+    margin-bottom:20px;
+}
+
+#registrationForm label{
+    display:block;
+    margin-top:8px;
+    margin-bottom:6px;
+    font-weight:500;
+}
+
+#registrationForm h3{
+    margin-top:18px;
+    margin-bottom:8px;
+}
+
+#addSubstitute{
+    margin-top:8px;
+}
+
+#registrationForm > button[type="submit"]{
+    margin-top:22px;
+    background:var(--accent);
+    color:white;
+}
+
+#registrationForm > button[type="submit"]:hover{
+    opacity:.9;
+}
+
 footer{
   text-align:center;
   padding:2rem;
   color:var(--muted);
+}
+
+@media (max-width: 768px) {
+
+    .modal-content{
+        width:90%;
+        max-width:550px;
+        max-height:90vh;
+        overflow-y:auto;
+    
+        background:var(--surface);
+        border:1px solid var(--border);
+        border-radius:15px;
+        padding:30px;
+        position:relative;
+    }
+
+    .modal-content h2{
+        font-size:1.8rem;
+        text-align:center;
+    }
+
+    .modal-content h3{
+        font-size:1rem;
+        margin-top:20px;
+    }
+
+    #dynamicFields input{
+        width:100%;
+        font-size:15px;
+        padding:12px;
+    }
+
+    #dynamicFields button{
+        width:100%;
+    }
+
+    #addSubstitute{
+        width:100%;
+        margin-top:10px;
+    }
+
+    #closeModal{
+        font-size:28px;
+    }
+
+}
+
+@media (max-width:480px){
+
+    .modal-content{
+        padding:15px;
+    }
+
+    .modal-content h2{
+        font-size:1.5rem;
+    }
+
+    .modal-content h3{
+        font-size:.95rem;
+    }
+
+    #dynamicFields input{
+        font-size:14px;
+        padding:10px;
+    }
+
 }
 
 @keyframes fadeIn { 
