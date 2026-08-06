@@ -112,6 +112,55 @@ body{
     transform:translateY(-2px);
 }
 
+.registrations-section{
+    width:90%;
+    max-width:1000px;
+    margin:40px auto;
+}
+
+.registrations-section h2{
+    color:var(--primary);
+    margin-bottom:20px;
+    font-size:2rem;
+}
+
+#myRegistrations{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:20px;
+}
+
+.registration-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px;
+    box-shadow:0 8px 20px rgba(48,34,79,0.08);
+}
+
+.registration-card h3{
+    color:var(--primary);
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.registration-card p{
+    color:var(--text);
+    margin:8px 0;
+}
+
+.registration-card strong{
+    color:var(--accent);
+}
+
+.no-registrations{
+    color:var(--muted);
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:12px;
+    padding:20px;
+}
+
 .logout-btn{
     width:100%;
     margin-top:15px;

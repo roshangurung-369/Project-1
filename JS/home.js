@@ -86,7 +86,7 @@ participateButtons.forEach(button => {
                 <label>Team Name</label>
                 <input type="text" id="teamName" placeholder="Enter Team Name" required>
         
-                <h3>👑 Captain (Player 1)</h3>
+                <h3>&#128081; Captain (Player 1)</h3>
         
                 <input
                     type="text"
@@ -188,18 +188,69 @@ participateButtons.forEach(button => {
             });
         
         }
+
+        const addSubstituteBtn = document.getElementById("addSubstitute");
+
+    if (addSubstituteBtn) {
+
+        let substituteCount = 0;
+        const maxSubs = SPORTS[sport].maxSubs;
+
+        addSubstituteBtn.addEventListener("click", function () {
+
+            if (substituteCount >= maxSubs) {
+                return;
+            }
+
+            substituteCount++;
+
+            const input = document.createElement("input");
+
+            input.type = "text";
+            input.className = "substitutePlayer";
+            input.placeholder = `Substitute ${substituteCount}`;
+
+            document
+                .getElementById("substituteContainer")
+                .appendChild(input);
+
+            addSubstituteBtn.textContent =
+                `+ Add Substitute (${substituteCount}/${maxSubs})`;
+
+            if (substituteCount === maxSubs) {
+                addSubstituteBtn.disabled = true;
+                addSubstituteBtn.textContent = "Maximum Substitutes Added";
+            }
+
+        });
+
+    }
         
         }
 
         else {
-
-            dynamicFields.innerHTML = `
-                <input type="text" placeholder="Player Name" required>
-
-                <input type="text" placeholder="Contact Number" required>
-            `;
-
-        }
+            
+        dynamicFields.innerHTML = `
+            <label>Player Name</label>
+            
+            <input
+                type="text"
+                id="playerName"
+                value="${currentUser.name}"
+                readonly
+            >
+            
+            <label>Contact Number</label>
+            
+            <input
+                type="tel"
+                id="contactNumber"
+                placeholder="98XXXXXXXX"
+                required
+            >
+        `;
+            
+    }
 
         modal.style.display = "flex";
         document.body.style.overflow = "hidden";
@@ -234,53 +285,98 @@ registrationForm.addEventListener("submit", function (e) {
 
     const sport = modalTitle.textContent.replace(" Registration", "");
 
-    const teamName = document.getElementById("teamName")?.value.trim() || "";
-
-    const contact = document.getElementById("contactNumber")?.value.trim() || "";
-
-    if (teamName === "") {
-        alert("Please enter a team name.");
+    const sportCard = document.querySelector(
+            `.sport-card[data-sport="${sport}"]`
+        );
+    
+        const type = sportCard.dataset.type;
+        const alreadyRegistered = registrations.some(reg =>
+        reg.username === currentUser.username &&
+        reg.sport === sport
+    );
+    
+    if (alreadyRegistered) {
+        alert(`You are already registered for ${sport}.`);
         return;
     }
+
+    const contact =
+        document.getElementById("contactNumber")?.value.trim() || "";
 
     if (contact === "") {
         alert("Please enter a contact number.");
         return;
     }
 
-    const players = [];
+    let registration;
 
-    players.push(currentUser.name);
+   if (type === "team") {
 
-    document.querySelectorAll(".teamMember").forEach(player => {
+        const teamName =
+            document.getElementById("teamName")?.value.trim() || "";
 
-        if (player.value.trim() !== "") {
-            players.push(player.value.trim());
+        if (teamName === "") {
+            alert("Please enter a team name.");
+            return;
         }
 
-    });
+        const players = [currentUser.name];
 
-    const substitutes = [];
+        document.querySelectorAll(".teamMember").forEach(player => {
 
-    document.querySelectorAll(".substitutePlayer").forEach(player => {
+            if (player.value.trim() !== "") {
+                players.push(player.value.trim());
+            }
 
-        if (player.value.trim() !== "") {
-            substitutes.push(player.value.trim());
+        });
+
+        const minimumPlayers = SPORTS[sport].minPlayers;
+
+        if (players.length < minimumPlayers) {
+            alert(`You need at least ${minimumPlayers} players.`);
+            return;
         }
 
-    });
+        const substitutes = [];
 
-    const registration = {
+        document.querySelectorAll(".substitutePlayer").forEach(player => {
 
-        username: currentUser.username,
-        sport: sport,
-        teamName: teamName,
-        captain: currentUser.name,
-        contact: contact,
-        players: players,
-        substitutes: substitutes
+            if (player.value.trim() !== "") {
+                substitutes.push(player.value.trim());
+            }
 
-    };
+        });
+
+        registration = {
+            username: currentUser.username,
+            sport: sport,
+            type: "team",
+            teamName: teamName,
+            captain: currentUser.name,
+            contact: contact,
+            players: players,
+            substitutes: substitutes
+        };
+
+    } else {
+
+        const playerName =
+            document.getElementById("playerName")?.value.trim() || "";
+
+        if (playerName === "") {
+            alert("Please enter the player name.");
+            return;
+        }
+
+        registration = {
+            username: currentUser.username,
+            sport: sport,
+            type: "single",
+            playerName: playerName,
+            contact: contact
+        };
+
+    }
 
     registrations.push(registration);
 

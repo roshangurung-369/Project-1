@@ -3,7 +3,8 @@
 const currentUser = JSON.parse(sessionStorage.getItem("currentUser"));
 
 if (!currentUser) {
-    window.location.href = "login.html";
+    window.location.href = "register.html";
+    return;
 }
 
 document.getElementById("bigProfilePic").src = currentUser.profilePic;
@@ -29,6 +30,58 @@ function hideEmail(email) {
     const hidden = "*".repeat(name.length - 4);
 
     return visible + hidden + "@" + domain;
+}
+
+const myRegistrations = document.getElementById("myRegistrations");
+
+const registrations =
+    JSON.parse(localStorage.getItem("registrations")) || [];
+
+const userRegistrations = registrations.filter(registration =>
+    registration.username === currentUser.username
+);
+
+if (userRegistrations.length === 0) {
+
+    myRegistrations.innerHTML = `
+        <p class="no-registrations">
+            You have not registered for any sports yet.
+        </p>
+    `;
+
+} else {
+
+    userRegistrations.forEach(registration => {
+
+        const card = document.createElement("div");
+        card.className = "registration-card";
+
+        if (registration.type === "team") {
+
+            card.innerHTML = `
+                <h3>${registration.sport}</h3>
+
+                <p><strong>Team:</strong> ${registration.teamName}</p>
+                <p><strong>Captain:</strong> ${registration.captain}</p>
+                <p><strong>Players:</strong> ${registration.players.length}</p>
+                <p><strong>Substitutes:</strong> ${registration.substitutes.length}</p>
+            `;
+
+        } else {
+
+            card.innerHTML = `
+                <h3>${registration.sport}</h3>
+
+                <p><strong>Player:</strong> ${registration.playerName}</p>
+                <p><strong>Individual Registration</strong></p>
+            `;
+
+        }
+
+        myRegistrations.appendChild(card);
+
+    });
+
 }
 
 const logoutProfileBtn = document.getElementById("logoutProfileBtn");
